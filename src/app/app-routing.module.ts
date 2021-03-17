@@ -1,10 +1,41 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './routes/home/home.component';
+import { LoginComponent } from './routes/login/login.component';
+import { RegisterComponent } from './routes/register/register.component';
+import { MyComicsComponent } from './routes/my-comics/my-comics.component';
+import { MyFavoritesComponent } from './routes/my-favorites/my-favorites.component';
+import { MoreInfoComponent } from './routes/more-info/more-info.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+	{ 
+		path: '', 
+		component: HomeComponent 
+	},
+	{ 
+		path: 'login', 
+		component: LoginComponent 
+	},
+	{ 
+		path: 'register', 
+		component: RegisterComponent 
+	},
+	{ 
+		path: 'my-comics', 
+		component: MyComicsComponent 
+	},
+	{ 
+		path: 'my-favorites', 
+		component: MyFavoritesComponent 
+	},
+	{ 
+		path: 'more-info', 
+		component: MoreInfoComponent 
+	}
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

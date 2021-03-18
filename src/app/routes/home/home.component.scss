@@ -26,43 +26,64 @@
         ng-select {
             margin-top: 1px;
         }
-        .ng-select.custom ::ng-deep .ng-select-container  {        
-            border-radius: 0;
-            border: 0;
-            font-weight: 700;
-            height: 48px!important;
-            box-shadow: none;
-        }
         .ng-select.custom ::ng-deep .ng-dropdown-panel  {        
-            border-radius: 0;
-            border: 0;
-        }
-        .ng-select.custom ::ng-deep .ng-input {
-            top: 0!important;
-            height: 48px!important;
+            width: 413px;
         }
     }
     [order-by] {
         width: 169px;
-        .ng-select.custom ::ng-deep .ng-select-container  {        
-            border-radius: 0;
-            border: 0;
-            font-weight: 700;
-            height: 48px!important;
-            box-shadow: none;
-        }
         .ng-select.custom ::ng-deep .ng-dropdown-panel  {        
-            border-radius: 0;
-            border: 0;
-        }
-        .ng-select.custom ::ng-deep .ng-input {
-            top: 0!important;
-            height: 48px!important;
+            width: 309px;
         }
     }
     [limit] {
-        input {
-            width: 126px;
-        }
+        width: 126px;
     }
+}
+
+.ng-select.custom ::ng-deep .ng-select-container  {    
+    padding-left: 4px;    
+    border-radius: 0;
+    border: 0;
+    font-weight: 700;
+    height: 48px!important;
+    box-shadow: none;
+}
+.ng-select.custom ::ng-deep .ng-dropdown-panel  {        
+    border-radius: 0;
+    border: 0;
+    margin-top: 10px;
+    padding: 12px;
+}
+.ng-select.custom ::ng-deep .ng-input {
+    top: 0!important;
+    height: 48px!important;
+    font-size: 18px!important;
+}
+.ng-select.custom ::ng-deep .ng-option {
+    padding-left: 14px;    
+}
+.ng-select.custom ::ng-deep .ng-option-marked {
+    background: #F9F9F9;
+}
+.ng-select.custom ::ng-deep .ng-option-selected {
+    background: #F9F9F9!important;
+}
+.ng-select.custom ::ng-deep .ng-placeholder {    
+    color: #aaa;
+}
+.ng-select.custom ::ng-deep .ng-arrow {
+    display: none;
+}
+.ng-select.custom ::ng-deep .ng-arrow-wrapper {
+    height: 14px;
+    width: 14px;
+    background-image: url('../../../assets/icons/arrow-down.svg');
+    background-repeat: no-repeat;
+    margin-right: 12px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.ng-select-opened.custom ::ng-deep .ng-arrow-wrapper { 
+    background-image: url('../../../assets/icons/arrow-up.svg');
 }

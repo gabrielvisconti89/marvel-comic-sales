@@ -1,3 +1,42 @@
 [home] {
     min-height: 400px;
 }
+
+[options] {
+    margin-top: 40px;
+    margin-bottom: 48px;
+    div {
+        display: inline-block;
+        margin-right: 12px;
+        &:last-of-type {
+            margin-right: 0px;
+        }
+    }
+    [search] {
+        input {
+            width: 525px;
+            background: url(../../../assets/icons/search.svg) no-repeat scroll 490px 14px;
+            background-color: white;
+            padding: 0px 44px 0px 14px;
+        }
+    }
+    [character] {
+        position: relative;
+        width: 224px;
+        // select {
+        //     // width: 100%;
+        //     // padding: 0px 44px 0px 14px;
+        //     display: none; /*hide original SELECT element: */
+        // }
+    }
+    [order-by] {
+        input {
+            width: 169px;
+        }
+    }
+    [limit] {
+        input {
+            width: 126px;
+        }
+    }
+}

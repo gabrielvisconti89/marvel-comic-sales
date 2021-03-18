@@ -9,7 +9,7 @@ import { MoreInfoComponent } from './routes/more-info/more-info.component';
 
 const routes: Routes = [
 	{ 
-		path: '', 
+		path: 'home', 
 		component: HomeComponent 
 	},
 	{ 
@@ -31,7 +31,11 @@ const routes: Routes = [
 	{ 
 		path: 'more-info', 
 		component: MoreInfoComponent 
-	}
+	},
+	{ 
+		path: '**', 
+		redirectTo: 'home' 
+	},
 ];
 
 @NgModule({

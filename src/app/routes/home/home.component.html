@@ -1,3 +1,34 @@
+
+<div options>
+    <div search>
+        <input type="text" placeholder="Im Looking for...">
+    </div>
+    <div character>
+        <ng-select [(ngModel)]="selected">
+            <ng-option [value]="0">Character</ng-option>
+            <ng-option [value]="1">Audi</ng-option>
+            <ng-option [value]="2">BMW</ng-option>
+            <ng-option [value]="3">Citroen</ng-option>
+            <ng-option [value]="4">Ford</ng-option>
+            <ng-option [value]="5">Honda</ng-option>
+            <ng-option [value]="6">Jaguar</ng-option>
+            <ng-option [value]="7">Land Rover</ng-option>
+            <ng-option [value]="8">Mercedes</ng-option>
+            <ng-option [value]="9">Mini</ng-option>
+            <ng-option [value]="10">Nissan</ng-option>
+            <ng-option [value]="11">Toyota</ng-option>
+            <ng-option [value]="12">Volvo</ng-option>
+        </ng-select>
+    </div>
+    <div order-by>
+        <input type="text">
+    </div>
+    <div limit>
+        <input type="text">
+    </div>
+</div>
+
+
 <div home>
     home works!
 </div>

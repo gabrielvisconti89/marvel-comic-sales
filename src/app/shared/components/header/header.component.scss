@@ -9,6 +9,7 @@
         width: 74px;
         img {
             height: 50px;
+            cursor: pointer;
         }
     }
     [menu] {
@@ -36,6 +37,14 @@
         }
         [name] {
             font-weight: 400;
+            text-transform: none;
+        }
+        [logout] {
+            box-shadow: inset 0px 0px 0px 2px #AAAAAA;
+            color: #000;
+        }
+        .active {
+            color: #DC042B;
         }
     }
 }

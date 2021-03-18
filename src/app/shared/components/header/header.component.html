@@ -1,40 +1,34 @@
 <div header>
     <div class="container">
         <div logo>
-            <img src="assets/logo.svg">
+            <img src="assets/logo.svg" (click)="openPage('home')">
         </div>
         <div menu *ngIf="!isLogged">
-            <div>
+            <div (click)="openPage('home')">
                 Home
             </div>
-            <div>
-                About Us
-            </div>
-            <div register>
+            <div register (click)="openPage('register')">
                 Register
             </div>
-            <div login>
+            <div login (click)="switchLoginStatus()">
                 Login
             </div>
         </div>
         <div menu *ngIf="isLogged">
-            <div>
+            <div (click)="openPage('')">
                 Home
             </div>
-            <div>
+            <div (click)="openPage('my-comics')">
                 My Comics
             </div>
-            <div>
+            <div (click)="openPage('my-favorites')">
                 My Favorites
             </div>
             <div name>
                 Lucas Baumgart
             </div>
-            <div register>
-                Register
-            </div>
-            <div login>
-                Login
+            <div logout (click)="switchLoginStatus()">
+                Log Out
             </div>
         </div>
     </div>

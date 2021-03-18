@@ -4,8 +4,11 @@
         <input type="text" placeholder="Im Looking for...">
     </div>
     <div character>
-        <ng-select [(ngModel)]="selected">
-            <ng-option [value]="0">Character</ng-option>
+        <ng-select [(ngModel)]="selected"
+                   [clearable]="false"
+                   [searchable]="false"
+                   class="custom"
+                   placeholder="Character">
             <ng-option [value]="1">Audi</ng-option>
             <ng-option [value]="2">BMW</ng-option>
             <ng-option [value]="3">Citroen</ng-option>
@@ -21,7 +24,16 @@
         </ng-select>
     </div>
     <div order-by>
-        <input type="text">
+        <ng-select [(ngModel)]="selected"
+                   [clearable]="false"
+                   [searchable]="false"
+                   class="custom"
+                   placeholder="Character">
+            <ng-option [value]="1">Audi</ng-option>
+            <ng-option [value]="2">BMW</ng-option>
+            <ng-option [value]="3">Citroen</ng-option>
+            <ng-option [value]="4">Ford</ng-option>
+        </ng-select>
     </div>
     <div limit>
         <input type="text">

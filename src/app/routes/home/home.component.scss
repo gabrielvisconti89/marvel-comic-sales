@@ -23,15 +23,41 @@
     [character] {
         position: relative;
         width: 224px;
-        // select {
-        //     // width: 100%;
-        //     // padding: 0px 44px 0px 14px;
-        //     display: none; /*hide original SELECT element: */
-        // }
+        ng-select {
+            margin-top: 1px;
+        }
+        .ng-select.custom ::ng-deep .ng-select-container  {        
+            border-radius: 0;
+            border: 0;
+            font-weight: 700;
+            height: 48px!important;
+            box-shadow: none;
+        }
+        .ng-select.custom ::ng-deep .ng-dropdown-panel  {        
+            border-radius: 0;
+            border: 0;
+        }
+        .ng-select.custom ::ng-deep .ng-input {
+            top: 0!important;
+            height: 48px!important;
+        }
     }
     [order-by] {
-        input {
-            width: 169px;
+        width: 169px;
+        .ng-select.custom ::ng-deep .ng-select-container  {        
+            border-radius: 0;
+            border: 0;
+            font-weight: 700;
+            height: 48px!important;
+            box-shadow: none;
+        }
+        .ng-select.custom ::ng-deep .ng-dropdown-panel  {        
+            border-radius: 0;
+            border: 0;
+        }
+        .ng-select.custom ::ng-deep .ng-input {
+            top: 0!important;
+            height: 48px!important;
         }
     }
     [limit] {

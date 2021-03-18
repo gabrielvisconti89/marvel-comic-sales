@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './routes/home/home.component';
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { MyComicsComponent } from './routes/my-comics/my-comics.component';
@@ -10,7 +9,9 @@ import { MoreInfoComponent } from './routes/more-info/more-info.component';
 const routes: Routes = [
 	{ 
 		path: 'home', 
-		component: HomeComponent 
+		loadChildren: () => import('./routes/home/home.module').then(
+		  module => module.HomeModule
+		)
 	},
 	{ 
 		path: 'login', 
@@ -39,7 +40,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+	imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' })],
 	exports: [RouterModule]
 })
 export class AppRoutingModule { }

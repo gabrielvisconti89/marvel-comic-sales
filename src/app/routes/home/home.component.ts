@@ -8,10 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-	selectedCharacter: any = null;
-	sortedBy: string = 'alphabetical';
-	limit: number = 15;
-
 	constructor() { }
 
 	ngOnInit(): void {

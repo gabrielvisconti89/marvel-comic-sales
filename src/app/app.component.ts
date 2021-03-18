@@ -9,10 +9,11 @@ import { FooterComponent } from './shared/components/footer/footer.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'marvel-comic-sales';
+	
+    title = 'marvel-comic-sales';
 
-	constructor(
-		public router: Router,
-	) {
-	}
+    constructor(
+    	public router: Router,
+    ) {
+    }
 }

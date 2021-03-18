@@ -21,27 +21,10 @@ input {
     height: 48px;
     font-weight: 700;
 }
-
 input::placeholder {
     color: #AAAAAA;
 }
-
 input:focus, select:focus, textarea:focus, button:focus {
     outline: none;
 }
 
-.ng-select.custom ::ng-deep .ng-select-container  {        
-    border-radius: 0;
-    border: 0;
-    font-weight: 700;
-    height: 48px!important;
-    box-shadow: none;
-}
-.ng-select.custom ::ng-deep .ng-dropdown-panel  {        
-    border-radius: 0;
-    border: 0;
-}
-.ng-select.custom ::ng-deep .ng-input {
-    top: 0!important;
-    height: 48px!important;
-}

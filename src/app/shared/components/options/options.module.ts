@@ -1,34 +1,28 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 
-import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
-
-import { OptionsComponent } from '../../shared/components/options/options.component';
+import { OptionsComponent } from './options.component';
 
 const routes: Routes = [
   	{ 
 		path: '', 
-		component: HomeComponent 
+		component: OptionsComponent 
 	},
 ];
 
 @NgModule({
 	declarations: [
-		HomeComponent,
 		OptionsComponent
 	],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
 		FormsModule,
-		NgSelectModule
-	],
-	exports: [
-		RouterModule
+		NgSelectModule, 
 	]
 })
-export class HomeModule { }
+export class OptionsModule { }

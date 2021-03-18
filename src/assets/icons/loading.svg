@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>loading</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="loading" transform="translate(2.000000, 2.000000)" stroke="#000000" stroke-width="3.73922">
+            <line x1="15" y1="0" x2="15" y2="6" id="Path"></line>
+            <line x1="15" y1="24" x2="15" y2="30" id="Path" opacity="0.2"></line>
+            <line x1="4.395" y1="4.3945" x2="8.64" y2="8.6395" id="Path"></line>
+            <line x1="21.359" y1="21.3604" x2="25.604" y2="25.6054" id="Path" opacity="0.3"></line>
+            <line x1="0" y1="15" x2="6" y2="15" id="Path"></line>
+            <line x1="24" y1="15" x2="30" y2="15" id="Path" opacity="0.4"></line>
+            <line x1="4.395" y1="25.6054" x2="8.64" y2="21.3604" id="Path"></line>
+            <line x1="21.359" y1="8.6395" x2="25.604" y2="4.3945" id="Path" opacity="0.5"></line>
+        </g>
+    </g>
+</svg>

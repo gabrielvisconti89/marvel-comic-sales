@@ -1,1 +1,41 @@
-<p>header works!</p>
+<div header>
+    <div class="container">
+        <div logo>
+            <img src="assets/logo.svg">
+        </div>
+        <div menu *ngIf="!isLogged">
+            <div>
+                Home
+            </div>
+            <div>
+                About Us
+            </div>
+            <div register>
+                Register
+            </div>
+            <div login>
+                Login
+            </div>
+        </div>
+        <div menu *ngIf="isLogged">
+            <div>
+                Home
+            </div>
+            <div>
+                My Comics
+            </div>
+            <div>
+                My Favorites
+            </div>
+            <div name>
+                Lucas Baumgart
+            </div>
+            <div register>
+                Register
+            </div>
+            <div login>
+                Login
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { LoginComponent } from './routes/login/login.component';
-import { MyComicsComponent } from './routes/my-comics/my-comics.component';
 import { MyFavoritesComponent } from './routes/my-favorites/my-favorites.component';
 import { MoreInfoComponent } from './routes/more-info/more-info.component';
 import { AddComicComponent } from './dialogs/add-comic/add-comic.component';
@@ -24,7 +23,6 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    MyComicsComponent,
     MyFavoritesComponent,
     MoreInfoComponent,
     AddComicComponent,
@@ -39,10 +37,12 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 		HttpClientModule,
     FormsModule,
     NgSelectModule, 
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [
+    AppComponent
+  ],
 	schemas: [
 	  CUSTOM_ELEMENTS_SCHEMA,
 	  NO_ERRORS_SCHEMA

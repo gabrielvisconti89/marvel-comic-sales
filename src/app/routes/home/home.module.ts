@@ -7,7 +7,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 
-import { OptionsComponent } from '../../shared/components/options/options.component';
+import { OptionsModule } from './options/options.module';
 
 const routes: Routes = [
   	{ 
@@ -18,14 +18,14 @@ const routes: Routes = [
 
 @NgModule({
 	declarations: [
-		HomeComponent,
-		OptionsComponent
+		HomeComponent
 	],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
 		FormsModule,
-		NgSelectModule
+		NgSelectModule,
+		OptionsModule
 	],
 	exports: [
 		RouterModule

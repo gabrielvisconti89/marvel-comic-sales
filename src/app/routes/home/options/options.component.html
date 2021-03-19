@@ -1,7 +1,9 @@
 <div options>
+
     <div search>
         <input type="text" placeholder="Im Looking for...">
     </div>
+
     <div character>
         <ng-select [(ngModel)]="selectedCharacter"
                    [clearable]="false"
@@ -34,6 +36,7 @@
             </ng-option>
         </ng-select>
     </div>
+
     <div order-by>
         <ng-select [(ngModel)]="sortedBy"
                    [clearable]="false"
@@ -53,6 +56,7 @@
             </ng-option>
         </ng-select>
     </div>
+
     <div limit>
         <ng-select [(ngModel)]="limit"
                    [clearable]="false"
@@ -69,4 +73,5 @@
             </ng-option>
         </ng-select>
     </div>
+    
 </div>

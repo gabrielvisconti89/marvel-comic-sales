@@ -7,7 +7,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
 import { MyComicsComponent } from './my-comics.component';
 
-import { OptionsComponent } from '../../shared/components/options/options.component';
+import { OptionsModule } from './options/options.module';
 
 const routes: Routes = [
   	{ 
@@ -18,14 +18,14 @@ const routes: Routes = [
 
 @NgModule({
 	declarations: [
-		MyComicsComponent,
-		OptionsComponent
+		MyComicsComponent
 	],
 	imports: [
-			CommonModule,
-			RouterModule.forChild(routes),
-			FormsModule,
-			NgSelectModule
+		CommonModule,
+		RouterModule.forChild(routes),
+		FormsModule,
+		NgSelectModule,
+		OptionsModule
 	],
 	exports: [
 		RouterModule

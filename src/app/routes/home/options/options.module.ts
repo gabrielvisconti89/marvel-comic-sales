@@ -7,22 +7,17 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { OptionsComponent } from './options.component';
 
-const routes: Routes = [
-  	{ 
-		path: '', 
-		component: OptionsComponent 
-	},
-];
-
 @NgModule({
 	declarations: [
 		OptionsComponent
 	],
 	imports: [
 		CommonModule,
-		RouterModule.forChild(routes),
 		FormsModule,
 		NgSelectModule, 
-	]
+	],
+    exports: [
+        OptionsComponent
+    ]
 })
 export class OptionsModule { }

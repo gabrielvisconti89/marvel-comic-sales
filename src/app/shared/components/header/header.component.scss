@@ -28,7 +28,7 @@
             cursor: pointer;
         }
         [register] {
-            box-shadow: inset 0px 0px 0px 2px #DC042B;
+            box-shadow: inset 0px 0px 0px 1px #DC042B;
             color: #000;
         }
         [login] {
@@ -40,7 +40,7 @@
             text-transform: none;
         }
         [logout] {
-            box-shadow: inset 0px 0px 0px 2px #AAAAAA;
+            box-shadow: inset 0px 0px 0px 1px #AAAAAA;
             color: #000;
         }
         .active {

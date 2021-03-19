@@ -28,3 +28,15 @@ input:focus, select:focus, textarea:focus, button:focus {
     outline: none;
 }
 
+::-webkit-scrollbar {
+    width: 17px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #AAA;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #AAA, 70%;
+}

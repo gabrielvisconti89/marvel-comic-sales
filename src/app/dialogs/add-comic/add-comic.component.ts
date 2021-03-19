@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-add-comic',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComicComponent implements OnInit {
 
-  constructor() { }
+    constructor(public bsModalRef: BsModalRef) {}
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

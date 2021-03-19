@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './routes/register/register.component';
@@ -37,7 +39,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 		HttpClientModule,
     FormsModule,
     NgSelectModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [

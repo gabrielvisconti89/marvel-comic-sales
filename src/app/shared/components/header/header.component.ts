@@ -9,15 +9,15 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
 	isLogged: boolean = false;
-	page: string;
+	currentPage: string;
 
 	constructor(
 		private router: Router,
 	) {
 		this.router.events.subscribe(event => {
 			if (event instanceof NavigationEnd) {
-				this.page = event.urlAfterRedirects.replace('/', '');
-				console.log(this.page);
+				this.currentPage = event.urlAfterRedirects.replace('/', '');
+				console.log(this.currentPage);
 			}
 		});
 	}

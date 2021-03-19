@@ -4,7 +4,7 @@
             <img src="assets/logo.svg" (click)="openPage('home')">
         </div>
         <div menu *ngIf="!isLogged">
-            <div (click)="openPage('home')">
+            <div (click)="openPage('home')" [class.active]="currentPage == 'home'">
                 Home
             </div>
             <div register (click)="openPage('register')">
@@ -15,17 +15,17 @@
             </div>
         </div>
         <div menu *ngIf="isLogged">
-            <div (click)="openPage('')">
+            <div (click)="openPage('home')" [class.active]="currentPage == 'home'">
                 Home
             </div>
-            <div (click)="openPage('my-comics')">
+            <div (click)="openPage('my-comics')" [class.active]="currentPage == 'my-comics'">
                 My Comics
             </div>
-            <div (click)="openPage('my-favorites')">
+            <div (click)="openPage('my-favorites')" [class.active]="currentPage == 'my-favorites'" *ngIf="false">
                 My Favorites
             </div>
             <div name>
-                Lucas Baumgart
+                Gabriel Visconti
             </div>
             <div logout (click)="switchLoginStatus()">
                 Log Out

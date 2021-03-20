@@ -35,6 +35,8 @@
             font-weight: 900;
             text-transform: uppercase;
             cursor: pointer;
+            background: url('../../../assets/icons/arrow-left.svg') no-repeat scroll 14px 12px;
+            padding-left: 26px;
         }
     }
     [content] {
@@ -127,6 +129,8 @@
                 cursor: pointer;
             }
             [favorite] {
+                background: url('../../../assets/icons/heart.svg') no-repeat scroll 14px 9.5px;
+                padding-left: 21px;
                 margin-top: 65px;
                 box-shadow: inset 0px 0px 0px 1px #FFF;
             }

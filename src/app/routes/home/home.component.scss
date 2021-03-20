@@ -94,9 +94,11 @@
             color: #FFF;
         }
         [favorite] {
+            padding-left: 32px;
             bottom: 40px;
             box-shadow: inset 0px 0px 0px 1px #AAAAAA;
             color: #AAAAAA;
+            background: url('../../../assets/icons/heart-gray.svg') no-repeat scroll 16px 10.5px;
         }
     }
 }

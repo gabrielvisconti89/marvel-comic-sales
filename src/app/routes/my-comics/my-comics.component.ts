@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
@@ -18,7 +19,8 @@ export class MyComicsComponent implements OnInit {
 
 	constructor(
 		public authService: AuthService,
-		private modalService: BsModalService
+		private modalService: BsModalService,
+		private router: Router
 	) {
 	}
 
@@ -31,6 +33,10 @@ export class MyComicsComponent implements OnInit {
 
 	openRemoveComicModal() {
 		this.bsModalRef = this.modalService.show(RemoveComicComponent, Object.assign({}, { class: 'custom-modal modal-lg' }));
+	}
+
+	openMoreInfoPage() {
+		this.router.navigate(['/more-info'], {replaceUrl: true});
 	}
 
 }

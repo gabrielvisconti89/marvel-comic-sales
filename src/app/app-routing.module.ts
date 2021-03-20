@@ -3,7 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { MyFavoritesComponent } from './routes/my-favorites/my-favorites.component';
-import { MoreInfoComponent } from './routes/more-info/more-info.component';
 
 const routes: Routes = [
 	{ 
@@ -19,6 +18,12 @@ const routes: Routes = [
 		)
 	},
 	{ 
+		path: 'more-info', 
+		loadChildren: () => import('./routes/more-info/more-info.module').then(
+		  module => module.MoreInfoModule
+		)
+	},
+	{ 
 		path: 'login', 
 		component: LoginComponent 
 	},
@@ -29,10 +34,6 @@ const routes: Routes = [
 	{ 
 		path: 'my-favorites', 
 		component: MyFavoritesComponent 
-	},
-	{ 
-		path: 'more-info', 
-		component: MoreInfoComponent 
 	},
 	{ 
 		path: '**', 

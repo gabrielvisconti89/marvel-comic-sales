@@ -13,7 +13,6 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { LoginComponent } from './routes/login/login.component';
 import { MyFavoritesComponent } from './routes/my-favorites/my-favorites.component';
-import { MoreInfoComponent } from './routes/more-info/more-info.component';
 import { AddComicComponent } from './dialogs/add-comic/add-comic.component';
 import { EditComicComponent } from './dialogs/edit-comic/edit-comic.component';
 import { RemoveComicComponent } from './dialogs/remove-comic/remove-comic.component';
@@ -26,7 +25,6 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     RegisterComponent,
     LoginComponent,
     MyFavoritesComponent,
-    MoreInfoComponent,
     AddComicComponent,
     EditComicComponent,
     RemoveComicComponent,

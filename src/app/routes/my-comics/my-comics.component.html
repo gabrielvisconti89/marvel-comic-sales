@@ -1,55 +1,56 @@
-<app-options></app-options>
+<div class="container">
+    <app-options></app-options>
+    <div my-comics>
+        
+        <div item>
+            <div image>
+                <img height="225" width="150" src="assets/placeholders/avengers.png"/>
+            </div>
+            <div info-left>
+                <div text>
+                    <strong>Title:</strong>
+                    Avengers (2003) #8
+                </div>
+                <div text *ngIf="authService.isLogged">
+                    <strong>Owner:</strong> 
+                    Lucas Baumgart
+                </div>
+                <div text>
+                    <strong>Format:</strong>
+                    Comic Hand Book
+                </div>
+                <div text>
+                    <strong>Pages:</strong>
+                    34
+                </div>
+                <div text>
+                    <strong>Condition:</strong>
+                    Good
+                </div>
+                <div button (click)="openMoreInfoPage()">
+                    More info
+                </div>
+            </div>
+            <div info-right>
+                <div text>
+                    03/22/2021
+                </div>
+                <div price>
+                    <div label>
+                        Price
+                    </div>
+                    <div value>
+                        $18
+                    </div>
+                </div>
+                <div button edit (click)="openEditComicModal()">
+                    Edit
+                </div>
+                <div button remove (click)="openRemoveComicModal()">
+                    Remove
+                </div>
+            </div>
+        </div>
 
-<div my-comics>
-    
-    <div item>
-        <div image>
-            <img height="225" width="150" src="assets/placeholders/avengers.png"/>
-        </div>
-        <div info-left>
-            <div text>
-                <strong>Title:</strong>
-                Avengers (2003) #8
-            </div>
-            <div text *ngIf="authService.isLogged">
-                <strong>Owner:</strong> 
-                Lucas Baumgart
-            </div>
-            <div text>
-                <strong>Format:</strong>
-                Comic Hand Book
-            </div>
-            <div text>
-                <strong>Pages:</strong>
-                34
-            </div>
-            <div text>
-                <strong>Condition:</strong>
-                Good
-            </div>
-            <div button>
-                More info
-            </div>
-        </div>
-        <div info-right>
-            <div text>
-                03/22/2021
-            </div>
-            <div price>
-                <div label>
-                    Price
-                </div>
-                <div value>
-                    $18
-                </div>
-            </div>
-            <div button edit (click)="openEditComicModal()">
-                Edit
-            </div>
-            <div button remove (click)="openRemoveComicModal()">
-                Remove
-            </div>
-        </div>
     </div>
-
 </div>

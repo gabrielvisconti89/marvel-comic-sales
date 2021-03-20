@@ -28,6 +28,15 @@ input:focus, select:focus, textarea:focus, button:focus {
     outline: none;
 }
 
+textarea {
+    border: none;
+    height: 48px;
+    font-weight: 700;
+}
+textarea::placeholder {
+    color: #AAAAAA;
+}
+
 ::-webkit-scrollbar {
     width: 17px;
 }

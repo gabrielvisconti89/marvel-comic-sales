@@ -7,18 +7,19 @@
         </div>
     </div>
 
-    <div search>
-        <ng-select [clearable]="false"
+    <div search *ngIf="selectedComic == null">
+        <ng-select [(ngModel)]="selectedComic"
+                   [clearable]="false"
                    [searchable]="true"
                    class="custom"
                    placeholder="Search by Title on Marvel API">
-            <ng-option [value]="1" *ngFor="let i of [1,2,3,4,5,6]">
+            <ng-option [value]="{id: i}" *ngFor="let i of [1,2,3,4,5,6]">
                 <div image>
                     <img height="75" width="50" src="assets/placeholders/avengers.png"/>
                 </div>
                 <div info>
                     <div>
-                        Title: <strong>Avengers (2003) #8</strong>
+                        Title: <strong>Avengers (2003) #8</strong> ({{i}})
                     </div>
                     <div>
                         Format: <strong>Comic Hand Book</strong>
@@ -27,8 +28,54 @@
                         Page Number: <strong>34</strong>
                     </div>
                 </div>
+                <div ifSelected>
+                    <div>
+                        <strong>Avengers (2003) #8</strong>
+                    </div>
+                </div>
             </ng-option>
         </ng-select>
+    </div>
+
+    <div preview *ngIf="selectedComic != null">
+        <div image>
+            <img height="75" width="50" src="assets/placeholders/avengers.png"/>
+        </div>
+        <div info>
+            <div>
+                Title: <strong>Avengers (2003) #8</strong>
+            </div>
+            <div>
+                Format: <strong>Comic Hand Book</strong>
+            </div>
+            <div>
+                Page Number: <strong>34</strong>
+            </div>
+        </div>
+        <div close (click)="cleanSelection()">
+        </div>
+    </div>
+
+    <div condition *ngIf="selectedComic != null">
+        <input type="text" 
+               placeholder="Condition"
+               [(ngModel)]="condition">
+    </div>
+
+    <div price *ngIf="selectedComic != null">
+        <input type="text" 
+               placeholder="Price"
+               [(ngModel)]="price">
+    </div>
+
+    <div description *ngIf="selectedComic != null">
+        <textarea type="text" 
+                  placeholder="Description"
+                  [(ngModel)]="description"></textarea>
+    </div>
+
+    <div add-button [class.disabled]="condition == null || price == null">
+        + Add Comic
     </div>
 
 </div>

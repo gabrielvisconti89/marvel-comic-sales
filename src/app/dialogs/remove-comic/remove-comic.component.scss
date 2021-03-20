@@ -1,0 +1,55 @@
+[remove-comic] {
+    margin: auto;
+    width: 774px;
+    background-color: #EEE;
+    padding: 48px;
+    [image] {
+        width: 100%;
+        text-align: center;;
+        img {
+            width: 174px;
+        }
+    }
+    [title] {
+        text-align: center;
+        font-weight: 700;
+        font-size: 48px;
+    }
+    [message] {
+        text-align: center;
+        font-weight: 400;
+        font-size: 32px;
+    }
+    [buttons] {
+        margin-top: 48px;
+        div {
+            display: inline-block;
+            width: calc(50% - 12px);
+            height: 48px;
+            line-height: 48px;
+            color: #FFF;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            &:first-of-type {
+                margin-right: 24px;
+            }
+        }
+        [yes] {
+            background-color: #0BA360;
+        }
+        [no] {
+            background-color: #DC042B;
+        }
+    }
+}
+
+::ng-deep .modal-content {
+    max-width: 774px!important;
+    width:774px!important;
+    border: none!important;
+    border-radius: none!important;
+    background: #EEE!important;
+}

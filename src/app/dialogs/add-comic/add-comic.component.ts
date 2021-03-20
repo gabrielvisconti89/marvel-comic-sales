@@ -8,9 +8,18 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class AddComicComponent implements OnInit {
 
+	selectedComic: object = null;
+	condition: string = null;
+	price: string = null;
+	description: string = null;
+
     constructor(public bsModalRef: BsModalRef) {}
 
     ngOnInit(): void {
     }
+
+	cleanSelection() {
+		this.selectedComic = null;
+	}
 
 }

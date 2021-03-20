@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-edit-comic',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComicComponent implements OnInit {
 
-  constructor() { }
+	selectedComic: object = null;
+	condition: string = null;
+	price: string = null;
+	description: string = null;
 
-  ngOnInit(): void {
-  }
+    constructor(public bsModalRef: BsModalRef) {}
+
+	ngOnInit(): void {
+	}
+
+	cleanSelection() {
+		this.selectedComic = null;
+	}
 
 }

@@ -1,1 +1,51 @@
-<p>edit-comic works!</p>
+<div edit-comic>
+
+    <div header>
+        Edit Comic
+        <div close (click)="bsModalRef.hide()">
+            <img src="assets/icons/close.svg">
+        </div>
+    </div>
+
+    <div preview>
+        <div image>
+            <img height="75" width="50" src="assets/placeholders/avengers.png"/>
+        </div>
+        <div info>
+            <div>
+                Title: <strong>Avengers (2003) #8</strong>
+            </div>
+            <div>
+                Format: <strong>Comic Hand Book</strong>
+            </div>
+            <div>
+                Page Number: <strong>34</strong>
+            </div>
+        </div>
+        <div close (click)="cleanSelection()">
+        </div>
+    </div>
+
+    <div condition>
+        <input type="text" 
+               placeholder="Condition"
+               [(ngModel)]="condition">
+    </div>
+
+    <div price>
+        <input type="text" 
+               placeholder="Price"
+               [(ngModel)]="price">
+    </div>
+
+    <div description>
+        <textarea type="text" 
+                  placeholder="Description"
+                  [(ngModel)]="description"></textarea>
+    </div>
+
+    <div button [class.disabled]="condition == null || price == null">
+        Save
+    </div>
+
+</div>

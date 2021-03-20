@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth/auth.service';
 
 @Component({
@@ -10,11 +10,16 @@ import { AuthService } from '../../shared/services/auth/auth.service';
 export class HomeComponent implements OnInit {
 
 	constructor(
+		private router: Router,
 		public authService: AuthService
 	) {
 	}
 
 	ngOnInit(): void {
+	}
+
+	openMoreInfoPage() {
+		this.router.navigate(['/more-info'], {replaceUrl: true});
 	}
 
 }

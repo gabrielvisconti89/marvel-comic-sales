@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-more-info',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoreInfoComponent implements OnInit {
 
-  constructor() { }
+	constructor(
+		private router: Router,
+		public authService: AuthService
+	) {
+	}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
+
+	openHomePage() {
+		this.router.navigate(['/home'], {replaceUrl: true});
+	}
 
 }

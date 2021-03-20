@@ -9,11 +9,131 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.51) 0%, #000000 80%, #000000 78.22%), url('../../../assets/placeholders/knights.png') top;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.51) 0%, #000000 80%, #000000 78.22%), url('../../../assets/placeholders/knights.png');
         background-repeat: no-repeat;
-        background-position: center bottom;
+        background-position: center 4%;
         background-size: 100% auto;
-        filter: blur(8px);
+        filter: blur(10px);
         transform: scale(1.1);
       }
+}
+[more-info] {
+    position: relative;
+    [nav-bar] {
+        width: 100%;
+        height: 48px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        [button] {
+            color: #FFF;
+            height: 48px;
+            width: 100px;
+            box-shadow: inset 0px 0px 0px 1px #FFF;
+            line-height: 48px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+    [content] {
+        [image] {
+            vertical-align: top;
+            display: inline-block;
+            img {
+                width: 216px;
+                height: 324px;
+            }
+        }
+        [info] {
+            display: inline-block;
+            width: calc(100% - 385px);
+            height: 324px;
+            margin-left: 24px;
+            color: #FFF;
+            [title] {
+                font-size: 24px;
+                line-height: 28px;
+            }
+            [params] {
+                margin-top: 24px;
+                font-size: 18px;
+                font-weight: 300;
+                div {
+                    width: 33%;
+                    display: inline-block;
+                }
+                strong {
+                    font-weight: 700;
+                }
+            }
+            [description] {
+                margin-top: 24px;
+                [label] {
+                    margin-bottom: 8px;
+                    font-weight: 700;
+                }
+                [value] {
+                    font-weight: 300;
+                }
+            }
+            [author] {
+                margin-top: 24px;
+                strong {
+                    &:last-of-type {
+                        margin-left: 12px;
+                    }
+                }
+            }
+        }
+        [action] {
+            vertical-align: top;
+            display: inline-block;
+            width: 120px;
+            height: 200px;
+            margin-left: 10px;
+            [price] {
+                color: #FFF;
+                position: relative;
+                width: 100%;
+                [label] {
+                    position: absolute;
+                    right: 46px;
+                    top: 30px;
+                    font-size: 18px;
+                    font-weight: 300;
+                    line-height: 14px;
+                    margin-top: -20px;
+                    margin-right: 4px;
+                }
+                [value] {
+                    position: absolute;
+                    right: 0px;
+                    font-size: 24px;
+                    line-height: 34px;
+                    font-weight: 700;
+                }
+            }
+            [button] {
+                height: 36px;
+                width: 120px;
+                line-height: 36px;
+                color: #FFF;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 900;
+                cursor: pointer;
+            }
+            [favorite] {
+                margin-top: 65px;
+                box-shadow: inset 0px 0px 0px 1px #FFF;
+            }
+            [buy] {
+                margin-top: 12px;
+                background-color: #DC042B;
+            }
+        }
+    }
 }

@@ -18,7 +18,6 @@ export class OptionsComponent implements OnInit {
 	};
 	characters: Array<any> = [];
 	selectedCharacter: any = null;
-    numberOfItemsFromEndBeforeFetchingMore = 10;
 
 	sortedBy: string = 'alphabetical';
 	limit: number = 15;
@@ -39,10 +38,8 @@ export class OptionsComponent implements OnInit {
 	  	.toPromise()
 			.then(data => {
 				this.loading = false;
-				console.log(data);
 				this.response = data.data;
 				this.characters = this.characters.concat(data.data.results);
-				console.log(this.characters);
 			}, err => {
 				this.loading = false;
 				console.log(err);
@@ -51,16 +48,6 @@ export class OptionsComponent implements OnInit {
 
     onScrollToEnd() {
         this.getCharacters();
-    }
-
-    onScroll({ end }) {
-        if (this.loading || this.response.total <= this.characters.length) {
-            return;
-        }
-
-        if (end + this.numberOfItemsFromEndBeforeFetchingMore >= this.characters.length) {
-            this.getCharacters();
-        }
     }
 
 }

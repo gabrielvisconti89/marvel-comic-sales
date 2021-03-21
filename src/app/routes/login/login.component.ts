@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
 		if (regexp.test(this.email)) {
 			if (this.password.length > 5) {
 				this.login();
+			this.router.navigate(['/home'], {replaceUrl: true});
 			} else {
 				console.log('password not long enough')
 			}
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit {
 	login() {
 		var response = this.authService.login(this.email, this.password);
 		if (response.success == true) {
+			this.router.navigate(['/home'], {replaceUrl: true});
 		}
  	}
 

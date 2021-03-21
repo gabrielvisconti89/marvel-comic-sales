@@ -22,7 +22,6 @@ export class ConfigService {
 		this.timestamp = new Date().getTime();
 		var str = this.timestamp + this.privateKey + this.publicKey;
 		this.hash = Md5.hashStr(str);
-		console.log(this.hash);
 		this.auth = 'ts=' + this.timestamp + '&apikey=' + this.publicKey + '&hash=' + this.hash;
 	}
 	

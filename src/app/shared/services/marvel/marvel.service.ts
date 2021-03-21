@@ -23,6 +23,17 @@ export class MarvelService {
         let URL = this.configService.baseURL + 'characters?' + limit + offset + this.configService.auth;
         return this.http.get<any>(URL)
         .pipe(
+            // tap(data => this.log(data)),
+            catchError(this.handleError(URL, [])));
+    }
+
+	getComics(_limit: any, _offset: any): Observable<any> {
+		this.configService.generateParams();
+		let limit = 'limit=' + _limit + '&';
+		let offset = 'offset=' + _offset + '&';
+        let URL = this.configService.baseURL + 'comics?' + limit + offset + this.configService.auth;
+        return this.http.get<any>(URL)
+        .pipe(
             tap(data => this.log(data)),
             catchError(this.handleError(URL, [])));
     }

@@ -1,0 +1,81 @@
+[login] {
+    margin-bottom: 128px;
+    margin-top: 128px;
+    [image] {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    [form] {
+        text-align: center;
+        div {
+            display: block;
+            margin-bottom: 24px;
+        }
+        input {
+            height: 48px;
+            width: 480px;
+            background: url('../../../assets/icons/search.svg') no-repeat scroll 490px 14px;
+            background-color: white;
+            padding: 0px 44px 0px 14px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        input::placeholder {
+            color: #AAAAAA;
+        }
+        [button] {
+            margin: auto;
+            height: 48px;
+            width: 480px;
+            background-color: #DC042B;
+            font-size: 14px;
+            line-height: 48px;
+            color: #FFF;
+            text-transform: uppercase;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        [social] {
+            margin-top: 24px;
+            [label] {
+                font-weight: 400;
+                font-size: 16px;
+                text-align: center;
+                color: #AAAAAA;
+                margin-bottom: 24px;
+            }
+            [buttons] {
+                img {
+                    cursor: pointer;
+                    &:first-of-type {
+                        margin-right: 24px;
+                    }
+                }
+            }
+        }
+    }
+    [login] {
+        height: 36px;
+        width: 100%;
+        text-align: right;
+        line-height: 36px;
+        [label] {
+            display: inline-block;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+            color: #AAAAAA;
+            margin-right: 24px;
+        }
+        [button] {
+            padding: 0 10px 0 10px;
+            height: 36px;
+            box-shadow: inset 0px 0px 0px 1px #DC042B;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+}

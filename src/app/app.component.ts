@@ -13,6 +13,9 @@ export class AppComponent {
     title = 'marvel-comic-sales';
 	currentPage: string;
 
+	isHeaderEnabled: boolean = true;
+	isFooterEnabled: boolean = true;
+
     constructor(
     	public router: Router,
     ) {
@@ -20,6 +23,13 @@ export class AppComponent {
 			if (event instanceof NavigationEnd) {
 				this.currentPage = event.urlAfterRedirects.replace('/', '');
 				console.log(this.currentPage);
+				if (this.currentPage == 'register' || this.currentPage == 'login') {
+					this.isHeaderEnabled = false;
+					this.isFooterEnabled = false;
+				} else {
+					this.isHeaderEnabled = true;
+					this.isFooterEnabled = true;
+				}
 			}
 		});
     }

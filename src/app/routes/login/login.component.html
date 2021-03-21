@@ -5,12 +5,16 @@
         </div>
         <div form>
             <div>
-                <input type="text" placeholder="E-mail">
+                <input type="text" 
+                       placeholder="E-mail"
+                       [(ngModel)]="email">
             </div>
             <div>
-                <input type="text" placeholder="Password">
+                <input type="password" 
+                       placeholder="Password"
+                       [(ngModel)]="password">
             </div>
-            <div button>
+            <div button (click)="verifyFields()">
                 Login
             </div>
             <div social>
@@ -24,8 +28,12 @@
             </div>
         </div>
         <div login>
-            <div label>I don't have a password</div>
-            <div button>Register now</div>
+            <div label>
+                I don't have a password
+            </div>
+            <div button (click)="openRegisterPage()">
+                Register now
+            </div>
         </div>
     </div>
 </div>

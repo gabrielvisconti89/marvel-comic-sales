@@ -3,7 +3,7 @@
         <div logo>
             <img src="assets/logo.svg" (click)="openPage('home')">
         </div>
-        <div menu *ngIf="!isLogged">
+        <div menu *ngIf="!authService.isLogged">
             <div (click)="openPage('home')" [class.active]="currentPage == 'home'">
                 Home
             </div>
@@ -14,7 +14,7 @@
                 Login
             </div>
         </div>
-        <div menu *ngIf="isLogged">
+        <div menu *ngIf="authService.isLogged">
             <div (click)="openPage('home')" [class.active]="currentPage == 'home'">
                 Home
             </div>
@@ -27,7 +27,7 @@
             <div name>
                 Gabriel Visconti
             </div>
-            <div logout (click)="switchLoginStatus()">
+            <div logout (click)="logout()">
                 Log Out
             </div>
         </div>

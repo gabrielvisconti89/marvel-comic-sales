@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MarvelService } from '../../../shared/services/marvel/marvel.service';
+
 @Component({
   selector: 'app-options',
   templateUrl: './options.component.html',
@@ -7,13 +9,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionsComponent implements OnInit {
 
+    loading = false;
+	response: any = {
+		offset: 0,
+		limit: 20,
+		count: 20,
+		total: 0
+	};
+	characters: Array<any> = [];
 	selectedCharacter: any = null;
+    numberOfItemsFromEndBeforeFetchingMore = 10;
+
 	sortedBy: string = 'alphabetical';
 	limit: number = 15;
+	offset: number = 0;
 
-	constructor() { }
+	constructor(
+		public marvelService: MarvelService,
+	) {
+		this.getCharacters();
+	}
 
 	ngOnInit(): void {
 	}
+
+	getCharacters() {
+        this.loading = true;
+		this.marvelService.getCharacters(this.response.limit, this.response.offset + 20)
+	  	.toPromise()
+			.then(data => {
+				this.loading = false;
+				console.log(data);
+				this.response = data.data;
+				this.characters = this.characters.concat(data.data.results);
+				console.log(this.characters);
+			}, err => {
+				this.loading = false;
+				console.log(err);
+			});
+	}
+
+    onScrollToEnd() {
+        this.getCharacters();
+    }
+
+    onScroll({ end }) {
+        if (this.loading || this.response.total <= this.characters.length) {
+            return;
+        }
+
+        if (end + this.numberOfItemsFromEndBeforeFetchingMore >= this.characters.length) {
+            this.getCharacters();
+        }
+    }
 
 }

@@ -13,24 +13,24 @@
                    [searchable]="true"
                    class="custom"
                    placeholder="Search by Title on Marvel API">
-            <ng-option [value]="{id: i}" *ngFor="let i of [1,2,3,4,5,6]">
+            <ng-option [value]="comic" *ngFor="let comic of comics">
                 <div image>
-                    <img height="75" width="50" src="assets/placeholders/avengers.png"/>
+                    <img height="75" width="50" src="{{comic.thumbnail.path + '.' + comic.thumbnail.extension}}"/>
                 </div>
                 <div info>
                     <div>
-                        Title: <strong>Avengers (2003) #8</strong> ({{i}})
+                        Title: <strong>{{comic.title}}</strong>
                     </div>
                     <div>
-                        Format: <strong>Comic Hand Book</strong>
+                        Format: <strong>{{comic.format}}</strong>
                     </div>
                     <div>
-                        Page Number: <strong>34</strong>
+                        Page Number: <strong>{{comic.pageCount}}</strong>
                     </div>
                 </div>
                 <div ifSelected>
                     <div>
-                        <strong>Avengers (2003) #8</strong>
+                        <strong>{{comic.title}}</strong>
                     </div>
                 </div>
             </ng-option>
@@ -39,17 +39,17 @@
 
     <div preview *ngIf="selectedComic != null">
         <div image>
-            <img height="75" width="50" src="assets/placeholders/avengers.png"/>
+            <img height="75" width="50" src="{{selectedComic.thumbnail.path + '.' + selectedComic.thumbnail.extension}}"/>
         </div>
         <div info>
             <div>
-                Title: <strong>Avengers (2003) #8</strong>
+                Title: <strong>{{selectedComic.title}}</strong>
             </div>
             <div>
-                Format: <strong>Comic Hand Book</strong>
+                Format: <strong>{{selectedComic.format}}</strong>
             </div>
             <div>
-                Page Number: <strong>34</strong>
+                Page Number: <strong>{{selectedComic.pageCount}}</strong>
             </div>
         </div>
         <div close (click)="cleanSelection()">

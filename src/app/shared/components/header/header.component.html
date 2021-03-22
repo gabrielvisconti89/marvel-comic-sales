@@ -24,8 +24,8 @@
             <div (click)="openPage('my-favorites')" [class.active]="currentPage == 'my-favorites'" *ngIf="false">
                 My Favorites
             </div>
-            <div name>
-                Gabriel Visconti
+            <div name *ngIf="authService.user">
+                {{authService.user.name}}
             </div>
             <div logout (click)="logout()">
                 Log Out

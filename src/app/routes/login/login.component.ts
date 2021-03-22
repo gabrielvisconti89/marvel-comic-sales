@@ -11,6 +11,9 @@ import { LocalStorageService } from '../../shared/services/local-storage/local-s
 })
 export class LoginComponent implements OnInit {
 
+	error: any = {};
+	loading: boolean = false;
+
 	email: string;
 	password: string;
 
@@ -33,20 +36,39 @@ export class LoginComponent implements OnInit {
 		if (regexp.test(this.email)) {
 			if (this.password.length > 5) {
 				this.login();
-			this.router.navigate(['/home'], {replaceUrl: true});
 			} else {
-				console.log('password not long enough')
+				this.error.active = true;
+				this.error.message = 'Wrong credentials';
 			}
 		} else {
-			console.log('invalid e-mail')
+			this.error.active = true;
+			this.error.message = 'Wrong credentials';
 		}
 	}
-
-	login() {
-		var response = this.authService.login(this.email, this.password);
-		if (response.success == true) {
-			this.router.navigate(['/home'], {replaceUrl: true});
-		}
- 	}
+	 
+	async login() {
+		this.error = {};
+		this.loading = true;
+		this.authService.login(this.email, this.password)
+	  	.toPromise()
+	      .then(data => {
+			this.loading = false;
+	        if (data.id) {       	
+				console.log(data);
+	        	let response = data;
+	        	this.authService.user = response;
+				this.authService.isLogged = true;
+				this.storageService.set('user', response);
+				this.router.navigate(['/home'], {replaceUrl: true});
+		  	}
+			if (data.error == true) {
+				this.error.active = true;
+				this.error.message = data.message;
+			}
+	      }, err => {
+			this.loading = false;
+	      	console.log(err);
+	    });
+	}
 
 }

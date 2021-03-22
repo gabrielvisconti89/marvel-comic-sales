@@ -4,6 +4,9 @@
             <img height="54" width="75" src="assets/logo.svg"/>
         </div>
         <div form>
+            <div message *ngIf="error.active">
+                {{error.message}}
+            </div>
             <div>
                 <input type="text" 
                        placeholder="E-mail"

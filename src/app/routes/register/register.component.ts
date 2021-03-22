@@ -11,6 +11,9 @@ import { LocalStorageService } from '../../shared/services/local-storage/local-s
 })
 export class RegisterComponent implements OnInit {
 
+	error: any = {};
+	loading: boolean = false;
+
 	name: string;
 	email: string;
 	password: string;
@@ -31,29 +34,63 @@ export class RegisterComponent implements OnInit {
 	}
 
 	verifyFields() {
+		if (
+			this.password == null ||
+			this.email == null ||
+			this.name == null ||
+			this.confirmationPassword == null
+		) {
+			this.error.active = true;
+			this.error.message = 'Please fill in all the fields.';
+			return;
+		}
 		var regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 		if (regexp.test(this.email) == false) {
-			return console.log('invalid e-mail');
+			this.error.active = true;
+			this.error.message = 'Invalid e-mail.';
+			return;
 		}
 		if (this.password.length < 6) {
-			return console.log('password is not long enough');
+			this.error.active = true;
+			this.error.message = 'Password is not long enough.';
+			return;
 		}
 		if (this.password != this.confirmationPassword) {
-			return console.log('passwords not matching');
+			this.error.active = true;
+			this.error.message = 'Passwords are not matching.';
+			return;
 		}
 		if (this.name.length < 1) {
-			return console.log('name field is empty');
+			this.error.active = true;
+			this.error.message = 'Name field is empty.';
+			return;
 		}
 		this.register();
 	}
-
-	register() {
-		var response = this.authService.register(this.email, this.password, this.name);
-		if (response.success == true) {
-			this.router.navigate(['/home'], {replaceUrl: true});
-		} else {
-			console.log(response);
-		}
+	 
+	async register() {
+		this.error = {};
+		this.loading = true;
+		this.authService.register(this.name, this.email, this.password)
+	  	.toPromise()
+	      .then(data => {
+			this.loading = false;
+	        if (data.id) {       	
+				console.log(data);
+	        	let response = data;
+	        	this.authService.user = response;
+				this.authService.isLogged = true;
+				this.storageService.set('user', response);
+				this.router.navigate(['/home'], {replaceUrl: true});
+		  	}
+			if (data.error == true) {
+				this.error.active = true;
+				this.error.message = data.message;
+			}
+	      }, err => {
+			this.loading = false;
+	      	console.log(err);
+	    });
 	}
 
 }

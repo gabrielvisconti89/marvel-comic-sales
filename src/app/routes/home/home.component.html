@@ -4,7 +4,7 @@
         
         <div item *ngFor="let comic of comics">
             <div image>
-                <img height="225" width="150" src="{{comic.thumbnail.path + '.' + comic.thumbnail.extension}}"/>
+                <img height="225" width="150" src="{{comic.object.thumbnail.path + '.' + comic.object.thumbnail.extension}}"/>
             </div>
             <div info-left>
                 <div text>
@@ -13,28 +13,28 @@
                 </div>
                 <div text>
                     <strong>Format:</strong>
-                    {{comic.format}}
+                    {{comic.object.format}}
                 </div>
                 <div text *ngIf="comic.pageCount > 0">
                     <strong>Pages:</strong>
-                    {{comic.pageCount}}
+                    {{comic.object.pageCount}}
                 </div>
                 <div text>
                     <strong>Condition:</strong>
                     Good
                 </div>
-                <div button (click)="openMoreInfoPage()">
+                <div button (click)="openMoreInfoPage(comic)">
                     More info
                 </div>
             </div>
             <div info-right>
                 <div price>
                     <div value>
-                        ${{comic.prices[0].price}}
+                        ${{comic.price}}
                     </div>
                     <div label>Price</div>
                 </div>
-                <div button buy (click)="openMoreInfoPage()">
+                <div button buy (click)="openMoreInfoPage(comic)">
                     Buy
                 </div>
                 <div button favorite>
@@ -42,9 +42,9 @@
                 </div>
                 <div text>
                     <strong>Created at</strong>
-                    03/22/2021
+                    {{comic.registerDatetime | date: 'dd/MM/yyyy': '+180'}}
                     <strong>by</strong>
-                    Lucas Baumgart
+                    {{comic.name}}
                 </div>
             </div>
         </div>

@@ -11,9 +11,9 @@ import { LocalStorageService } from '../local-storage/local-storage.service';
 })
 export class AuthService {
 
-	user: object = null;
+	user: any = null;
 	isLogged: boolean = false;
-	newUser: object = null;
+	newUser: any = {};
 
 	constructor(
 		public http: HttpClient,
@@ -63,50 +63,6 @@ export class AuthService {
 		this.user = null;
 		this.isLogged = false;
 	}
-
-	// register(email, password, name) {
-	// 	var response = {
-	// 		success: false,
-	// 		data: null
-	// 	};
-	// 	this.storageService.remove('registered_user');
-	// 	var user = {
-	// 		email: email,
-	// 		password: password,
-	// 		name: name
-	// 	}
-	// 	this.storageService.set('registered_user', user);
-	// 	this.user = user;
-	// 	response.success = true;
-	// 	return response;
-	// }
-
-	// login(email, password) {
-	// 	var response = {
-	// 		success: false,
-	// 		data: null
-	// 	};
-	// 	var user = this.storageService.get('registered_user');
-	// 	if (user == null) {
-	// 		response.success = false;
-	// 		response.data = 'empty user storage';
-	// 		this.user = null;
-	// 		console.log(response.data);
-	// 		return response;
-	// 	}
-	// 	if (user.email == email && user.password == password) {
-	// 		response.success = true;
-	// 		this.user = user;
-	// 		this.storageService.set('user', user);
-	// 	} else {
-	// 		response.success = false;
-	// 		response.data = 'wrong credentials';
-	// 		this.user = null;
-	// 		console.log(response.data);
-	// 	}
-	// 	this.isLogged = response.success
-	// 	return response;
-	// }
 
 	private log(message: string) {
 		console.log(message);

@@ -65,6 +65,7 @@
     <div price *ngIf="selectedComic != null">
         <input type="text" 
                placeholder="Price"
+               currencyMask [options]="{ align: 'left'}"
                [(ngModel)]="price">
     </div>
 
@@ -74,7 +75,9 @@
                   [(ngModel)]="description"></textarea>
     </div>
 
-    <div add-button [class.disabled]="condition == null || price == null">
+    <div add-button 
+         (click)="createNewComic()"
+         [class.disabled]="condition == null || price == null || selectedComic == null">
         + Add Comic
     </div>
 

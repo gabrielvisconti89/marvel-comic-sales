@@ -2,51 +2,51 @@
     <app-options></app-options>
     <div my-comics>
         
-        <div item>
+        <div item *ngFor="let comic of comics">
             <div image>
-                <img height="225" width="150" src="assets/placeholders/avengers.png"/>
+                <img height="225" width="150" src="{{comic.object.thumbnail.path + '.' + comic.object.thumbnail.extension}}"/>
             </div>
             <div info-left>
                 <div text>
                     <strong>Title:</strong>
-                    Avengers (2003) #8
+                    {{comic.title}}
                 </div>
                 <div text *ngIf="authService.isLogged">
                     <strong>Owner:</strong> 
-                    Lucas Baumgart
+                    {{comic.name}}
                 </div>
                 <div text>
                     <strong>Format:</strong>
-                    Comic Hand Book
+                    {{comic.object.format}}
                 </div>
                 <div text>
                     <strong>Pages:</strong>
-                    34
+                    {{comic.object.pageCount}}
                 </div>
                 <div text>
                     <strong>Condition:</strong>
-                    Good
+                    {{comic.condition}}
                 </div>
-                <div button (click)="openMoreInfoPage()">
+                <div button (click)="openMoreInfoPage(comic)">
                     More info
                 </div>
             </div>
             <div info-right>
                 <div text>
-                    03/22/2021
+                    {{comic.registerDatetime | date: 'dd/MM/yyyy': '+180'}}
                 </div>
                 <div price>
+                    <div value>
+                        $ {{comic.price}}
+                    </div>
                     <div label>
                         Price
                     </div>
-                    <div value>
-                        $18
-                    </div>
                 </div>
-                <div button edit (click)="openEditComicModal()">
+                <div button edit (click)="openEditComicModal(comic)">
                     Edit
                 </div>
-                <div button remove (click)="openRemoveComicModal()">
+                <div button remove (click)="openRemoveComicModal(comic)">
                     Remove
                 </div>
             </div>

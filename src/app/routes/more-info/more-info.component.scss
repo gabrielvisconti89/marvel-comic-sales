@@ -12,7 +12,7 @@
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.51) 0%, #000000 80%, #000000 78.22%), url('../../../assets/placeholders/knights.png');
         background-repeat: no-repeat;
         background-position: center 4%;
-        background-size: 100% auto;
+        background-size: 100% auto!important;
         filter: blur(10px);
         transform: scale(1.1);
       }

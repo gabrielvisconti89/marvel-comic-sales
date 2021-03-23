@@ -8,39 +8,40 @@
             </div>
             <div content>
                 <div image>
-                    <img src="assets/placeholders/knights.png">
+                    <img src="{{comicService.selectedComic.object.thumbnail.path + '.' + comicService.selectedComic.object.thumbnail.extension}}">
                 </div>
                 <div info>
                     <div title>
-                        Official Handbook of the Marvel Universe (2004) #10 (MARVEL KNIGHTS)
+                        {{comicService.selectedComic.title}}
                     </div>
                     <div params>
                         <div>
                             <strong>Pages:</strong>
-                            <br>38
+                            <br>
+                            {{comicService.selectedComic.object.pageCount}}
                         </div>
-                        <div>
+                        <div *ngIf="comicService.selectedComic.object.format">
                             <strong>Format:</strong>
                             <br>
-                            Comic
+                            {{comicService.selectedComic.object.format}}
                         </div>
                         <div>
                             <strong>Condition:</strong>
-                            <br>Good
+                            <br>
+                            {{comicService.selectedComic.condition}}
                         </div>
                     </div>
                     <div description>
                         <div label>Description:</div>
                         <div value>
-                            Scelerisque tellus tincidunt tempor purus proin suspendisse dui diam.
-                            Consectetur turpis a fermentum hac sit eros.
-                            Eu ut ac magna lorem imperdiet tristique justo molestie viverra.
-                            Neque ut eu aliquet nibh pellentesque interdum morbi.
+                            {{comicService.selectedComic.object.description}}
                         </div>
                     </div>
                     <div author>
-                        <strong>Created at</strong> 03/22/2021
-                        <strong>by</strong> Lucas Baumgart
+                        <strong>Created at</strong>
+                        {{comicService.selectedComic.registerDatetime | date: 'dd/MM/yyyy': '+180'}}
+                        <strong>by</strong>
+                        {{comicService.selectedComic.name}}
                     </div>
                 </div>
                 <div action>

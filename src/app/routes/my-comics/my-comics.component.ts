@@ -7,6 +7,7 @@ import { EditComicComponent } from '../../dialogs/edit-comic/edit-comic.componen
 import { RemoveComicComponent } from '../../dialogs/remove-comic/remove-comic.component';
 
 import { AuthService } from '../../shared/services/auth/auth.service';
+import { ComicService } from '../../shared/services/comic/comic.service';
 
 @Component({
   selector: 'app-my-comics',
@@ -15,28 +16,49 @@ import { AuthService } from '../../shared/services/auth/auth.service';
 })
 export class MyComicsComponent implements OnInit {
 
+	loading: boolean = false;
 	bsModalRef: BsModalRef;
+	comics: Array<any> = [];
 
 	constructor(
 		public authService: AuthService,
+		public comicService: ComicService,
 		private modalService: BsModalService,
 		private router: Router
 	) {
 	}
 
 	ngOnInit(): void {
+		this.getComicsByUser();
 	}
 
-	openEditComicModal() {
+	openEditComicModal(comic) {
 		this.bsModalRef = this.modalService.show(EditComicComponent, Object.assign({}, { class: 'custom-modal modal-lg' }));
 	}
 
-	openRemoveComicModal() {
+	openRemoveComicModalcomic() {
 		this.bsModalRef = this.modalService.show(RemoveComicComponent, Object.assign({}, { class: 'custom-modal modal-lg' }));
 	}
 
-	openMoreInfoPage() {
+	openMoreInfoPage(comic) {
+		this.comicService.selectedComic = comic;
 		this.router.navigate(['/more-info'], {replaceUrl: true});
+	}
+
+	getComicsByUser() {
+        this.loading = true;
+		this.comicService.comicsByUser()
+	  	.toPromise()
+			.then(data => {
+				this.loading = false;
+				this.comics = data;
+				for (let comic of this.comics) {
+					comic.object = JSON.parse(comic.object);
+				}
+			}, err => {
+				this.loading = false;
+				console.log(err);
+			});
 	}
 
 }

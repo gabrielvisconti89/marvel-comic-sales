@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxCurrencyModule } from "ngx-currency";
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -38,6 +39,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     FormsModule,
     NgSelectModule, 
     ReactiveFormsModule,
+    NgxCurrencyModule,
     ModalModule.forRoot()
   ],
   providers: [],
